@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Employee Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('bg img.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Employee Management</h1>
+        
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4 class="card-title mb-0">Add/Edit Employee</h4>
+            </div>
+            <div class="card-body">
+                <form id="employeeForm" class="needs-validation" novalidate>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="employeeName">Name</label>
+                            <input type="text" class="form-control" id="employeeName" required>
+                            <div class="invalid-feedback">Please enter a name.</div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="employeeEmail">Email ID</label>
+                            <input type="text" class="form-control" id="employeeEmail" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="employeeMobile">Mobile No</label>
+                            <input type="tel" class="form-control" id="employeeMobile" pattern="^\d{10}$" required>
+                            <div class="invalid-feedback">Please enter a valid 10-digit mobile number.</div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="employeePosition">Position</label>
+                            <input type="text" class="form-control" id="employeePosition" required>
+                            <div class="invalid-feedback">Please enter a position.</div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="employeeIndex" value="-1">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mb-0">Employee List</h4>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email ID</th>
+                            <th>Mobile No</th>
+                            <th>Position</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeTableBody">
+                        <!-- Employee rows will be added here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="javascript.js"></script>
+</body>
+</html>
